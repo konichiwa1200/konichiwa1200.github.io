@@ -1,0 +1,22 @@
+
+h2 {
+	margin: 10px 0px 10px 0px;
+	padding: 0;
+	display: inline;
+	color: red;
+}
+nav > a {
+	text-decoration: underline;
+}
+.breadcrumbs {
+	margin: 10px 0px 10px 0px;
+}
+code {
+	background-color: #f1f1f1;
+	color: red;
+	font-size: 16px;
+}
+.code-box {
+	background-color: #f1f1f1;
+    word-wrap: break-word;
+}

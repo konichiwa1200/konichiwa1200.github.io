@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DBC Blog Post</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>My Blog Post</h1>
+
+			<nav class="nav-bar">
+				<ul class="navigation">
+					<li><a href="http://konichiwa1200.github.io/">Home</a></li>
+					<li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
+					<li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
+					<li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+            <nav class="breadcrumbs">
+                <a href="http://konichiwa1200.github.io/index.html">Home</a> >
+                <a href="http://konichiwa1200.github.io/blog-index.html">Blogs</a> > Ruby Classes
+            </nav>
+		
+			<h2>Ruby Classes</h2><span class="date-post-created"> 2/5/2016</span>
+
+			<section>
+				<p>
+					Since everything in Ruby is an object, an object is an instance of a class. Let's look at an example. 
+				</p>
+
+				<section class="code-box">
+					<samp>
+						2.3.0 :309 > String.superclass <br>
+						 => Object <br>
+						2.3.0 :310 > String.superclass.superclass <br>
+						 => BasicObject <br>
+						2.3.0 :311 > String.superclass.superclass.superclass <br>
+						 => nil
+					</samp>
+				</section>
+
+				<p>
+					Now that code looks confusing but so lets write it in a different way to show the heirarchy.
+				</p>
+
+				<section class="code-box">
+					<samp>
+						-------<br> 
+						| nil |<br>
+						-------<br>
+						^<br>
+						|<br>
+						---------------<br>
+						| BasicOjbect |<br>
+						---------------<br>
+						^<br>
+						|<br>
+						----------<br>
+						| Object |<br>
+						----------<br>
+						^<br>
+						|<br>
+						----------<br>
+						| String |<br>
+						----------<br>
+					</samp>
+				</section>
+				<p>
+					So we can tell from the tree above that <code>BasicObject</code> is the highest object in ruby, and <code>Object</code> is an instance of a <code>BasicObject</code> class, while <code>String</code> is an instance of the <code>Object</code> class. Being an instance has the effect of inheritance. That is to say that an <code>Object</code> instance has all of the methods that a <code>BasicObject</code> does and more; it inherits all of the methods from its <code>superclass</code>. And it keeps going downstream; as more instances are created from the <code>String</code>, those instances will also inherit the methods.
+				</p>
+
+				<p>
+					Now lets create our own class and take a look. 
+				</p>
+
+<pre class="code-box">
+class House 
+	
+  attr_reader :bathrooms
+  attr_accessor :bedrooms
+  
+  def initialize(bedrooms, bathrooms)
+    unless bedrooms.kind_of?(Numeric) && bathrooms.kind_of?(Numeric)
+      raise ArgumentError.new("Please enter a number for bedrooms and bathrooms")
+    end
+  
+    unless bedrooms > -1
+      raise ArgumentError.new("Please enter a number for the bedrooms")
+    end
+    @bedrooms = bedrooms
+    @bathrooms = bathrooms
+  end
+  
+  def size
+    if @bedrooms > 4
+      puts "This is a big house"
+    else
+      puts "This is a small house"
+    end
+  end
+
+end
+</pre>
+</section>
+
+				<p>
+					Now let's create a new instance of the <code>House</code> class using the <code>.new</code> method and passing the number of bedrooms and bathrooms to the instance.
+				</p>
+
+				<section class="code-box">
+					<code>
+						mansion = House.new(5,2)<br>
+						mansion.size<br>
+						p "Your house has #{mansion.bathrooms} bathrooms"<br>
+						p "Your house has #{mansion.bedrooms} bedrooms"<br>
+						<br>
+						p mansion.bedrooms = 6<br>
+						<br>
+						p "Your house has #{mansion.bathrooms} bathrooms"<br>
+						p "Your house has #{mansion.bedrooms} bedrooms"<br>
+					</code>
+				</section>
+
+				<p>
+					As a result, we wanted to see know how many bedrooms and bathrooms the instance <code>mansion</code>. Using the <code>attr_reader</code> and the <code>attr_accessor</code> we are able to return the current values of the variables that we are interested in. The differences between reader and accessor, is that reader can only read the value of the variable while accessor has access to the variable and is able to make changes to it. We see this in practice on when we use <code>mansion.bedrooms = 6</code>. The <code>attr_accessor</code> is versitile, but it must be used cautiously as it can become a security vulnerability.
+				</p>
+
+				<p>
+					The result for the code above can be seen below.
+				</p>
+
+				<section class="code-box">
+					<samp>
+						"This is a big house"<br>
+						"Your house has 2 bathrooms"<br>
+						"Your house has 5 bedrooms"<br>
+						6<br>
+						"Your house has 2 bathrooms"<br>
+						"Your house has 6 bedrooms"<br>
+					</samp>
+				</section>
+
+			</section>
+		</main>
+
+		<footer>
+			<ul class="footer-navigation">
+				<li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
+				<li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
+				<li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
+				<li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

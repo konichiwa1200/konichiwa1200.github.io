@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DBC Blog Post</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>My Blog Post</h1>
+      
+      <nav class="nav-bar">
+        <ul class="navigation">
+          <li><a href="http://konichiwa1200.github.io/">Home</a></li>
+          <li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
+          <li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
+          <li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <nav class="breadcrumbs">
+        <a href="http://konichiwa1200.github.io/index.html">Home</a> >
+        <a href="http://konichiwa1200.github.io/blog-index.html">Blogs</a> > Seventh Post on Ruby Loops vs Javascript Loops 
+        </nav>
+
+        <h2>Seventh Post on Ruby Loops vs Javascript Loops </h2><span class="date-post-created">2/12/2016</span>
+
+            <h3>Loops</h3>
+            <p>
+                Programming languages have many ways of iterating through data, and there are many common ones. Different programs have multiple ways of doing the same thing, while others are more elemental about the process. Ruby is in the latter case, were its philosophy is to have as many different ways to do the same thing as possible, whiel Javascript is more of the former, staying to the basics.
+            </p>
+
+            <h3>Ruby</h3>
+            <p>
+                There are many methods to iterate through our data in Ruby. Just like there are many ways of tackling a problem, there are many tools at our disposal. Among the most frequent uses are <code>for ... in ..., .each, .map, and while</code>. And ieach of them have a variation depending on the task at hand, for example if we are looping through a hash, or an array, if we want keys only or values for a hash, if we want to reference our approach based on the contents of the elements inside an array or the location where the data resides in the array. We can see it in action below.
+            </p>
+
+            <h3>Javascript</h3>
+            <p>
+                Javascript is influenced syntactically by Java and C/C++ languages. It is evident from the way we state functions, loops, and even terminate lines of code (using semicolons). So to iterate through our data, we can intrust ourselves to the basic options of <code>for, while, map, and forEach</code>. When iterating in Javascript, we want to think of it as the essential tools needed to build great things, we will only be limited by our imagination. So let's take a look with the examples below.
+            </p>
+            
+            <h3>Examples</h3><br>
+            
+            <h4>Ruby Iterations</h4>
+            <pre class="code-box">
+# Array used for the examples
+food = ["pizza", "burger", "hot dog", "nachos"]
+
+#using the for ... in method
+for i in food
+    puts i
+end
+
+##result 
+pizza
+burger
+hot dog
+nachos
+ => ["pizza", "burger", "hot dog", "nachos"]
+ 
+#using the each method
+food.each {|item| puts item}
+
+##result
+pizza
+burger
+hot dog
+nachos
+ => ["pizza", "burger", "hot dog", "nachos"]     
+
+#using the map method
+food.map {|item| puts item}
+
+##result
+pizza
+burger
+hot dog
+nachos
+ => [nil, nil, nil, nil]
+ 
+#using while method
+i = 0
+while (i < food.length)
+    puts food[i]
+    i += 1
+end
+
+##result
+pizza
+burger
+hot dog
+nachos
+ => nil
+                </pre>
+            </section>
+            
+            <h4>Javascript Iterations</h4>
+                <pre class="code-box">
+# Array used for the examples
+var food = ["pizza", "burger", "hot dog", "nachos"]
+
+#using the for ... in method
+for (var i = 0; i < food.length; i++) {
+    console.log(food[i])
+}
+
+##result 
+pizza
+burger
+hot dog
+nachos
+=> undefined
+ 
+#using the each method
+food.each {|item| puts item}
+
+##result
+pizza
+burger
+hot dog
+nachos
+ => ["pizza", "burger", "hot dog", "nachos"]     
+
+#using the map method
+food.forEach(function(item) {console.log(item)})
+
+##result
+pizza
+burger
+hot dog
+nachos
+=> undefined
+ 
+#using while method
+var i = 0
+while (i < food.length) {
+    console.log(food[i])
+    i += 1
+}
+
+##result
+pizza
+burger
+hot dog
+nachos
+=> 4
+			</pre>
+		</section>
+        
+        <hr>
+
+        <h3>Resources</h3><br>
+        <section>
+            <a href="http://www.w3schools.com/js/js_loop_while.asp">Javascript While Loop</a><br>		
+            <a href="http://www.w3schools.com/js/js_loop_for.asp">Javascript For Loop</a><br>
+            <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm">Ruby Loop Tutorial</a><br>
+            <a href="https://launchschool.com/books/ruby/read/loops_iterators">Ruby Loops and Iterators</a><br>
+        </section>
+    </main>    
+
+    <footer>
+      <ul class="footer-navigation">
+            <li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
+            <li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
+            <li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
+            <li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

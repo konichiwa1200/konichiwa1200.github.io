@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>My Blog Post</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../konichiwa1200.github.io/stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="../konichiwa1200.github.io/stylesheets/blog.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>My Blog Post</h1>
+		
+			<nav class="nav-bar">
+				<ul class="navigation">
+					<li><a href="http://konichiwa1200.github.io/">Home</a></li>
+					<li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
+					<li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
+					<li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+	
+		<nav class="breadcrumbs">
+            <a href="http://konichiwa1200.github.io/index.html">Home</a> >
+			<a href="http://konichiwa1200.github.io/blog-index.html">Blogs</a> > Array and Hashes
+		</nav>
+
+		<h2>Array and Hashes</h2><span class="date-post-created">1-20-2016</span><br>
+	
+			<h3>Arrays</h3>
+			<section>
+				<p>
+				By definition, "Arrays are ordered, integer-indexed collections of any object". In less technical language, an array is a bundle of variables. To visualize this, image that an array is a storage container, and we can place different things inside this container, be it boxes, loose items, big, small and anything in between, as long as it fits in the container, it can be stored. Now as we know, variables are just abstractions for things that can change, so we can visualize them as boxes, and its contents can change.
+				</p> 
+				
+				<p>
+				Let's take an example. We are going to make a container, and we are going to call it "wheels". And we are going to put three items inside it: the number 5 and a sign that says "your the best!". That would look like this: <code>wheels = [5, "your the best!"]</code>
+				</p>
+				
+				<p> 
+				Now that we have a container, we can look at the second part of the definition, "ordered, integer-indexed", which is fancy technical talk for "first come, first server." That is, each item inside the container "wheels" has been given a number as they are stored, which allows us to do some interesting things. To see it in action, we can ask "wheels" how many items it has like this: <code>wheels.length</code> and the result would be <code>=> 2</code>, we can change the contents of the first box in the container like so: <code>wheels[0]="Hive Five"</code>, which will result in <code>wheels=["Hive Five","your the best!"]</code>. 
+				</p>
+				
+				<p>
+				The index is the slot in the array, so index zero has the value "Hive Five", index two has "your the best!", etc. And its ordered, so the next object that you add to the array will be placed at the end by default, unless you specify its position like this: <code>wheels.insert(1,"big guy,")</code> which will cause the array to be: <code>wheels=["Hive Five","big guy,", "your the best!"]</code>. We can also do fun stuff like concatinate all the items in array like so: <code>wheels.join(" ")</code> and that returns a string <code>"Hive Five big guy, your the best!"</code>.
+				</p>
+				
+				<p>
+				We can also tons of things, like manipulate each element, or only ones that meet a certain criteria through iteration like: <code>wheels.each{|word| word.upcase!}.join(" ")</code> which returns <code>"HIVE FIVE BIG GUY, YOUR THE BEST!"</code>. As we can see, we can perform multiple actions, and they will be performed in sequence as they are noted on the command. In your example, each word is converted to all caps in place, so we changed the original array, and then we join all of the items with a space in between to result in string.</p>
+				<p>Those are just a few things that we can do with arrays; many more can be found by reading the documentation for ruby on the resources belew.
+				</p>
+			</section>
+
+			<h3>Hashes</h3>
+			<section>
+				<p>
+				Now the definition of a hash by the ruby documentation is as follows: "A Hash is a dictionary-like collection of unique keys and their values." In other words, its an association of one key and one value. Its like a two column matrix, except that the keys are all unique, so there can't be two keys named "John". This can be useful when you want to have a list of items where there is only one connection.</p>
+				<p>The best way to illustrate this is through an example. Let's say we need to keep track of what city people are located at a specific time. Because you can not be in two places at once, a hash would not allow keys(the person's name) entered into the hash more than once. The hash also doesn't have to be uniform, thus one person can enter their location in long, lat format, while another peorson can input a zip code, or an airport code.
+				</p>
+
+				<p>
+				Let's see it in action; we are going to have three people, with their location: <code>location = {Alice:92010, Britney: "LAS", Barack: "Washington, D.C."}</code>. Now if we want to add one to the hash, we simple do the following: <code>location["Barack"] = "White House"</code>.
+				</p> 
+
+				<p>
+				Its important to note, that <code>"Barack"</code> and <code>Barack</code> are two different objects, that is why its allowed. The technical reason behind it is that when we use the <code>location = {Barack:"White House"}</code> style, we are actually doing the following: <code>location[:Barack] = "White House"</code> which is equivalent to <code>location = {:Barack => "White House"}</code>, where as the other form is using a string to associate with another string. Placing the colon infront of the name creates a symbol vs a string. This will affect the hashes performance but only once the hash has a large number of enteries, otherwise the user will not see any difference in performance.
+				</p>
+
+				<p>
+				But if we did the following: <code>location = {Alice:92010, Britney: "LAS", Barack: "Washington, D.C.", Barack: "White House"}</code>, there would be an error and the first value would be discarded, and only the last value stored. Hashes are better when we need to search for data, so if we want to know where Alice is, all we have to do is: <code>location[:Alice]</code>. This is much better than remembering a number that corresponds to an index in an array. And if your key is not found in the hash, it will return a <code>nil</code>. Now there are tons of things that we can do with hashes similar to the ones we did for arrays, and you can look at those in the documentation pages.
+				</p>
+			</section>
+		</main>
+		<hr>
+
+		<h3>Resources</h3><br>
+		<section>
+			<a href="http://ruby-doc.org/core-2.2.0/Array.html">Ruby Array Documentation</a><br>
+			<a href="http://docs.ruby-lang.org/en/2.0.0/Array.html">Ruby Array Documentation</a><br>
+			<a href="http://ruby-doc.org/core-2.2.0/Hash.html">Ruby Hash Documentation</a><br>
+			<a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html">Ruby Hash Documentation</a>
+		</section>
+
+		<footer>
+			<ul class="footer-navigation">
+		       	<li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
+		        <li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
+		        <li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
+		        <li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

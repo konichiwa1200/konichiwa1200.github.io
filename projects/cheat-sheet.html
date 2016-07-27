@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>My SQL Cheat-Sheet</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="../stylesheets/projects.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>My SQL Cheat-Sheet</h1>
+			
+			<nav class="nav-bar">
+				<ul class="navigation">
+					<li><a href="http://konichiwa1200.github.io/">Home</a></li>
+					<li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
+					<li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
+					<li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+        <main>
+
+		<nav class="breadcrumbs">
+            <a href="http://konichiwa1200.github.io/index.html">Home</a> >
+			<a href="http://konichiwa1200.github.io/projects/index.html">Projects</a> > Cheat-Sheet
+		</nav>
+
+        <h2>Cheat-Sheet</h2><date> 2/18/2016</date></br>
+        <h3>SQL Commands and Examples</h3>
+            <article>
+                  
+            <h4>SCHEMA</h4>
+                <p>
+                    A schema is the outline of the database and how all of the data is stored in the database. For example, the database that we can see below is composed of two tables, <code>states</code> and <code>regions</code>. Each table has fields (columns) with a name and datatype, i.e <code>id smallint</code>
+                </p>
+                <pre class="code-box">
+CREATE TABLE states(id smallint, state_name varchar(30), population_density float, population int, region_id smallint);
+CREATE TABLE regions(id smallint, region_name varchar(255));
+                </pre>
+                
+                <p>
+                    and records (rows)
+                </p>
+                
+                <pre class="code-box">
+id          state_name  population_density  population  region_id
+----------  ----------  ------------------  ----------  ----------
+1           Alabama     96.45               4822023     5
+2           Alaska      1.1111              731449      10
+3           Arizona     57.05               6553255     8
+...
+                </pre>
+                
+                <p>
+                    Every time we ask for impormation from the database, its called a query. The first example above, our query was about the schema, and the second example was about what did table <code>states</code> contain.
+                </p>
+            </article>
+            
+            <h4>SELECT/FROM COMMANDS</h4>
+            <article>
+                <p>
+                    To perform a query, we use the <code>SELECT</code> and <code>FROM</code> commands. This <strong>selects</strong> the fields <strong>from</strong> the table that you want.
+                </p>
+                
+                <pre class="code-box">
+SELECT state_name, population FROM states;
+                </pre> 
+                
+                <p>
+                    The above query (question) asks the database to return all of the states and their respective populations from the table named <code>states</code>. The result is shown below (result truncated to conserve space).
+                </p>
+                <pre class="code-box">
+state_name  population
+----------  ----------
+Alabama     4822023
+Alaska      731449
+Arizona     6553255
+Arkansas    2949131
+California  38041430
+...
+                </pre>
+            </article>
+            
+            <h4>FILTERING COMMANDS</h4>
+            <article>
+                <p>
+                    When we perform queries, we rarely want all of the data that is in the database. Instead, we are asking precise questions about the data, and we can use filtering techniques for that. The first technique is to filter by a specific value. For example, if we want to know how many states are from the region 7, we would filter as follows:
+                </p>
+                
+                <pre class="code-box">
+SELECT state_name FROM states WHERE region_id = 7;
+                </pre> 
+                
+                <p>
+                    That would result in the following output:
+                </p>
+                <pre class="code-box">
+state_name
+----------
+Arkansas
+Louisiana
+Oklahoma
+Texas
+                </pre>
+                <p>
+                    Or if we want to know which states have a population of 1 to 1.5 million people, we would perform the following query:
+                </p>
+                <pre class="code-box">
+SELECT state_name FROM states WHERE population > 1000000 AND population < 1500000;
+                </pre>
+                <p>
+                    That results in the following output:
+                </p>
+                <pre>
+state_name  population
+----------  ----------
+Hawaii      1392313
+Maine       1329192
+Montana     1005141
+New Hampsh  1320718
+Rhode Isla  1050292
+                </pre>
+            </article>
+            
+            <h4>WILDCARD</h4>
+            <article>
+                <p>
+                    When analyzing data from databases, we want to draw conclusions, and the methods above might be too broad to capture the question that we want to ask. That is were the wildcard (%) symbol comes into play. We can ask more refined questions like include all that match this pattern, or select only those that meet this character. Its another layer of filtering the data, used as a logical operator for characters just like ranges are used for numerical data. Example, if we need to know which regions have "Central" in their name, we would perform this query: 
+                </p>
+                <pre class="code-box">
+SELECT region_name FROM regions WHERE region_name LIKE "%Central";
+                </pre>
+                <p>
+                    Resulting in this:
+                </p>
+                <pre class="code-box">
+region_name
+------------------
+East North Central
+East South Central
+West North Central
+West South Central
+                </pre>
+                <p>
+                    The wildcard symbol <strong>MUST</strong> be placed on the side of the character that we want to auto-complete. That is, if we use the % sign on the left, like the above, the result will only be of data that end in the word "Central", but if we had <code>"%Central%"</code>, then it would return any records that have the word central in them. We can also use the underscore (_) to look for one character difference like the following example:
+                </p>
+                <pre class="code-box">
+SELECT state_name FROM states where state_name like "_ew%";
+                </pre>
+                <p>
+                    Resulting in:
+                </p>
+                <pre class="code-box">
+state_name
+-------------
+New Hampshire
+New Jersey
+New Mexico
+New York
+                </pre>
+                <p>
+                    The <code>"_ew%"</code> looks for two things, one character wildcard to the left of the "ew" letters, and zero to many characters wildcard to the right of the "ew" letters.
+                </p>
+            </article>
+        </main>
+        
+		<footer>
+			<ul class="footer-navigation">
+		       	<li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
+		        <li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
+		        <li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
+		        <li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
