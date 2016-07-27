@@ -1,37 +1,50 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <head>
-    <title>DBC Blog Post</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-  </head>
-  
-  <body>
-    <header>
-      <h1>My Blog Post</h1>
-      
-      <nav class="nav-bar">
-        <ul class="navigation">
-          <li><a href="http://konichiwa1200.github.io/">Home</a></li>
-          <li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
-          <li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
-          <li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Konichiwa - Blog</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    
+    <link href="../css/default.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <nav>
+        <ul class="list-inline">
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="../projects/projects-index.html">Projects</a>
+            </li>
+            <li>
+                <a href="blog-index.html" class="active-tab">Blogs</a>
+            </li>
+            <li>
+                <a href="../about.html">About</a>
+            </li>
         </ul>
-      </nav>
+    </nav>
+
+    <header>
+        <div id="title">
+            CSS Styling of Element Positioning
+        </div>
     </header>
     
     <main>
-        <nav class="breadcrumbs">
-            <a href="http://konichiwa1200.github.io/index.html">Home</a> >
-            <a href="http://konichiwa1200.github.io/blog-index.html">Blogs</a> > CSS Styling
-        </nav>
+        <h1>Posted on January 16, 2016</h1>
+        <hr class="date-posted">
 
-        <h2>What are the differences between relative, absolute, fixed, and static positioning?</h2>
-        <date>1/16/2016</data>
-
-        <section>
-        <h4>What are the differences between margin, border, and padding?</h4>
+        <h1>What are the differences between margin, border, and padding?</h1>
 
         <p>
             Margin refers to the space between tag elements. This space would be similar to the casing and screen protector on your phone; you use a case to protect the phone from other elements, but still consider it part of the phone when you go and pick it up.
@@ -50,16 +63,47 @@
         </p>
 
         <img src="../imgs/margin_border_padding.png" alt="html box model">
-        </section>
     </main>
-    
+                
     <footer>
-      <ul class="footer-navigation">
-            <li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
-            <li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
-            <li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
-            <li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
-      </ul>
+        <div class="footer-social">
+            <ul class="footer-inline">
+                <li>
+                    <a href="https://twitter.com/konichiwa12001">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto: konichiwa1200@gmail.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/konichiwa1200">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Konichiwa Inc. 2016</p>
+        </div>
     </footer>
-  </body>
+
+    </body>
 </html>

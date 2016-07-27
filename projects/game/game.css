@@ -1,57 +1,4 @@
-.grid {
-    display: table;
-    height: 500px;
-    width: 600px;
-    position: absolute;
-    top: 115px;
-    margin-left: 23.5%;
-}
-
-.tiles {
-    height: 100px;
-    width: 100px;
-    display: inline-block;
-    background-color: cadetblue;
-    border: 1.5px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-    vertical-align: middle;
-    transition: opacity 0.2s linear;
-}
-
-.controls {
-    position: relative;
-    display: inline-block;
-    width: 30%;
-    top: 35px;
-}
-
-.guesses {
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    list-style-type: none;
-    width: 90%;
-}
-
-.title {
-    margin-bottom: 0px;
-    border-bottom: 1px solid darkgreen;
-}
-
-.hidden {
-    opacity: 0; 
-}
-
-.correct_guess {
-    background-color: lightseagreen;
-}
-
-.incorrect_guess {
-    background-color: lightcoral;
-}
+/*css rules for html tags*/
 
 img {
     width: 500px;
@@ -72,17 +19,20 @@ nav {
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: #FFD719;
+    background-color: black;
+    color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 2em;
+    margin-bottom: 5px;
 }
 
 a:link, .counter_label, .title {
-    background-color: darkseagreen;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: silver;
     color: white;
     padding: 15px;
     text-align: center;
@@ -92,8 +42,71 @@ a:link, .counter_label, .title {
 }
 
 a:hover, a:active, .tiles:hover {
-    background-color: red;
+    background-color: orange;
 }
+
+a {
+    color: white;
+}
+
+/*css rules for classes*/
+
+.grid {
+    display: table;
+    height: 500px;
+    width: 600px;
+    position: absolute;
+    top: 115px;
+    margin-left: 23.5%;
+}
+
+.tiles {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    background-color: silver;
+    border: 1.5px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    transition: opacity 0.2s linear;
+}
+
+.controls {
+    position: absolute;
+    display: inline-block;
+    width: 30%;
+    top: 80px;
+}
+
+.guesses {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    list-style-type: none;
+    width: 90%;
+}
+
+.title {
+    margin-bottom: 0px;
+    border-bottom: 2px solid white;
+}
+
+.hidden {
+    opacity: 0; 
+}
+
+.correct_guess {
+    background-color: lightseagreen;
+}
+
+.incorrect_guess {
+    background-color: lightcoral;
+}
+
+/*css rules for id tags*/
 
 #counter {
     height: 100px;
@@ -108,7 +121,7 @@ a:hover, a:active, .tiles:hover {
 
 #credit_div {
     position: absolute;
-    top: 115px;
+    top: 120px;
     left: 15px;
     width: 23%;
     text-align: center;

@@ -1,87 +1,99 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>DBC Blog Post</title>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-		<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-	</head>
+<html lang="en">
 
-	<body>
-		<header>
-			<h1>My Blog Post</h1>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<nav class="nav-bar">
-				<ul class="navigation">
-					<li><a href="http://konichiwa1200.github.io/">Home</a></li>
-					<li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
-					<li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
-					<li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
-				</ul>
-			</nav>
-		</header>
+    <title>Konichiwa - Blog</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    
+    <link href="../css/default.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+    
+</head>
 
-		<main>
-            <nav class="breadcrumbs">
-                <a href="http://konichiwa1200.github.io/index.html">Home</a> >
-                <a href="http://konichiwa1200.github.io/blog-index.html">Blogs</a> > Ruby Classes
-            </nav>
-		
-			<h2>Ruby Classes</h2><span class="date-post-created"> 2/5/2016</span>
+<body>
+    <nav>
+        <ul class="list-inline">
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="../projects/projects-index.html">Projects</a>
+            </li>
+            <li>
+                <a href="blog-index.html" class="active-tab">Blogs</a>
+            </li>
+            <li>
+                <a href="../about.html">About</a>
+            </li>
+        </ul>
+    </nav>
 
-			<section>
-				<p>
-					Since everything in Ruby is an object, an object is an instance of a class. Let's look at an example. 
-				</p>
+    <header>
+        <div id="title">
+            Ruby Classes
+        </div>
+    </header>
+    
+    <main>
+        <h1>Posted on February 5, 2016</h1>
+        <hr class="date-posted">
 
-				<section class="code-box">
-					<samp>
-						2.3.0 :309 > String.superclass <br>
-						 => Object <br>
-						2.3.0 :310 > String.superclass.superclass <br>
-						 => BasicObject <br>
-						2.3.0 :311 > String.superclass.superclass.superclass <br>
-						 => nil
-					</samp>
-				</section>
+        <h1>Introduction</h1>
+        <p>
+            Since everything in Ruby is an object, an object is an instance of a class. Let's look at an example. 
+        </p>
 
-				<p>
-					Now that code looks confusing but so lets write it in a different way to show the heirarchy.
-				</p>
+        <pre>
+2.3.0 :309 > String.superclass
+ => Object
+2.3.0 :310 > String.superclass.superclass
+ => BasicObject
+2.3.0 :311 > String.superclass.superclass.superclass
+ => nil    
+        </pre>
 
-				<section class="code-box">
-					<samp>
-						-------<br> 
-						| nil |<br>
-						-------<br>
-						^<br>
-						|<br>
-						---------------<br>
-						| BasicOjbect |<br>
-						---------------<br>
-						^<br>
-						|<br>
-						----------<br>
-						| Object |<br>
-						----------<br>
-						^<br>
-						|<br>
-						----------<br>
-						| String |<br>
-						----------<br>
-					</samp>
-				</section>
-				<p>
-					So we can tell from the tree above that <code>BasicObject</code> is the highest object in ruby, and <code>Object</code> is an instance of a <code>BasicObject</code> class, while <code>String</code> is an instance of the <code>Object</code> class. Being an instance has the effect of inheritance. That is to say that an <code>Object</code> instance has all of the methods that a <code>BasicObject</code> does and more; it inherits all of the methods from its <code>superclass</code>. And it keeps going downstream; as more instances are created from the <code>String</code>, those instances will also inherit the methods.
-				</p>
+        <p>
+            Now that code looks confusing but so lets write it in a different way to show the heirarchy.
+        </p>
 
-				<p>
-					Now lets create our own class and take a look. 
-				</p>
+        <pre>
+------- 
+| nil |
+-------
+^
+|
+---------------
+| BasicOjbect |
+---------------
+^
+|
+----------
+| Object |
+----------
+^
+|
+----------
+| String |
+----------
+        </pre>
 
-<pre class="code-box">
+        <p>
+            So we can tell from the tree above that <code>BasicObject</code> is the highest object in ruby, and <code>Object</code> is an instance of a <code>BasicObject</code> class, while <code>String</code> is an instance of the <code>Object</code> class. Being an instance has the effect of inheritance. That is to say that an <code>Object</code> instance has all of the methods that a <code>BasicObject</code> does and more; it inherits all of the methods from its <code>superclass</code>. And it keeps going downstream; as more instances are created from the <code>String</code>, those instances will also inherit the methods.
+        </p>
+
+        <p>
+            Now lets create our own class and take a look. 
+        </p>
+
+        <pre>
 class House 
-	
+    
   attr_reader :bathrooms
   attr_accessor :bedrooms
   
@@ -106,56 +118,86 @@ class House
   end
 
 end
-</pre>
-</section>
+        </pre>
+        <p>
+            Now let's create a new instance of the <code>House</code> class using the <code>.new</code> method and passing the number of bedrooms and bathrooms to the instance.
+        </p>
 
-				<p>
-					Now let's create a new instance of the <code>House</code> class using the <code>.new</code> method and passing the number of bedrooms and bathrooms to the instance.
-				</p>
+        <pre>
+mansion = House.new(5,2)
+mansion.size
+p "Your house has #{mansion.bathrooms} bathrooms"
+p "Your house has #{mansion.bedrooms} bedrooms"
 
-				<section class="code-box">
-					<code>
-						mansion = House.new(5,2)<br>
-						mansion.size<br>
-						p "Your house has #{mansion.bathrooms} bathrooms"<br>
-						p "Your house has #{mansion.bedrooms} bedrooms"<br>
-						<br>
-						p mansion.bedrooms = 6<br>
-						<br>
-						p "Your house has #{mansion.bathrooms} bathrooms"<br>
-						p "Your house has #{mansion.bedrooms} bedrooms"<br>
-					</code>
-				</section>
+p mansion.bedrooms = 6
 
-				<p>
-					As a result, we wanted to see know how many bedrooms and bathrooms the instance <code>mansion</code>. Using the <code>attr_reader</code> and the <code>attr_accessor</code> we are able to return the current values of the variables that we are interested in. The differences between reader and accessor, is that reader can only read the value of the variable while accessor has access to the variable and is able to make changes to it. We see this in practice on when we use <code>mansion.bedrooms = 6</code>. The <code>attr_accessor</code> is versitile, but it must be used cautiously as it can become a security vulnerability.
-				</p>
+p "Your house has #{mansion.bathrooms} bathrooms"
+p "Your house has #{mansion.bedrooms} bedrooms"
+        </pre>
 
-				<p>
-					The result for the code above can be seen below.
-				</p>
+        <p>
+            As a result, we wanted to see know how many bedrooms and bathrooms the instance <code>mansion</code>. Using the <code>attr_reader</code> and the <code>attr_accessor</code> we are able to return the current values of the variables that we are interested in. The differences between reader and accessor, is that reader can only read the value of the variable while accessor has access to the variable and is able to make changes to it. We see this in practice on when we use <code>mansion.bedrooms = 6</code>. The <code>attr_accessor</code> is versitile, but it must be used cautiously as it can become a security vulnerability.
+        </p>
 
-				<section class="code-box">
-					<samp>
-						"This is a big house"<br>
-						"Your house has 2 bathrooms"<br>
-						"Your house has 5 bedrooms"<br>
-						6<br>
-						"Your house has 2 bathrooms"<br>
-						"Your house has 6 bedrooms"<br>
-					</samp>
-				</section>
+        <p>
+            The result for the code above can be seen below.
+        </p>
 
-			</section>
-		</main>
+        <pre>
+"This is a big house"
+"Your house has 2 bathrooms"
+"Your house has 5 bedrooms"
+6
+"Your house has 2 bathrooms"
+"Your house has 6 bedrooms"
+        </pre>
+        <br>
 
-		<footer>
-			<ul class="footer-navigation">
-				<li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
-				<li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
-				<li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
-				<li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
-			</ul>
-		</footer>
-	</body>
+        <h1>Resources</h1>
+        <section class="resources">
+            <a href="http://ruby-doc.org/core-2.2.0/Class.html">Ruby Class Documentation</a>
+        </section>
+    </main>
+                
+    <footer>
+        <div class="footer-social">
+            <ul class="footer-inline">
+                <li>
+                    <a href="https://twitter.com/konichiwa12001">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto: konichiwa1200@gmail.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/konichiwa1200">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Konichiwa Inc. 2016</p>
+        </div>
+    </footer>
+
+    </body>
 </html>

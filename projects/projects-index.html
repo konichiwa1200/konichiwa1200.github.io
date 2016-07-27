@@ -6,50 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Konichiwa - About</title>
+    <title>Konichiwa - Projects</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link href="css/default.css" rel="stylesheet">
-    <link href="css/about.css" rel="stylesheet">
-    
+
+    <link href="../css/default.css" rel="stylesheet">
+    <link href="../css/projects.css" rel="stylesheet">
 </head>
 
 <body>
     <nav>
         <ul class="list-inline">
             <li>
-                <a href="index.html">Home</a>
+                <a href="../index.html">Home</a>
             </li>
             <li>
-                <a href="projects/projects-index.html">Projects</a>
+                <a href="projects-index.html" class="active-tab">Projects</a>
             </li>
             <li>
-                <a href="blog/blog-index.html">Blogs</a>
+                <a href="../blog/blog-index.html">Blogs</a>
             </li>
             <li>
-                <a href="about.html" class="active-tab">About</a>
+                <a href="../about.html">About</a>
             </li>
         </ul>
     </nav>
 
     <header>
         <div id="title">
-            About Me
+            Projects
         </div>
     </header>
-    
     <main>
-            <br>
-            <p>
-                After a career in science, I have decided to jump over to the fast pace technology sector where I hope to have success by bridging a gap between the science and technology world. 
-            </p>
-            
-            <p>
-                By taking time to learn the technical requirements for software engineering, my knowledge in the science field can be of great assistance to teams that deliver software that is tailored to the scientific community. A community that expects rich and advanced features without compromising ease of use.
-            </p>
+        <a href="./grocery/grocery.html" target="_blank">
+            <div class="project-preview">
+                <h1>Grocery List</h1>
+                <div class="inner-preview">
+                    <p>Quick way to make a grocery list.</p>
+                    <img src="./img/grocery_list.png" alt="grocery list app preview screenshot" class="img_sive">
+                </div>
+            </div>
+        </a>
+
+        <a href="./game/game.html" target="_blank">
+            <div class="project-preview">
+                <h1>Guessing Game</h1>
+                <div class="inner-preview">
+                    <p>Try to guess the background image in the fewest clicks possible. Like on the tiles to remove it an uncover a portion of the image behind it.</p>
+                    <img src="./img/guessing_game.png" alt="guessing game preview sceenshot" class="img_sive">
+                </div>
+            </div>
+        </a>
     </main>
-                
+
     <footer>
         <div class="footer-social">
             <ul class="footer-inline">

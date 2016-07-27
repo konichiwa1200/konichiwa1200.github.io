@@ -1,0 +1,53 @@
+
+main {
+	margin: .5% 25%;
+}
+
+h1 {
+	margin: 4% 0;
+}
+
+header {
+	height: 200px;
+}
+
+img {
+	width: 60%;
+	margin: 0 0 0 2%;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+p {
+	color: black;
+}
+
+.project-preview:hover {
+	color: white;
+	background: orange;
+}
+
+.project-preview {
+	height: 275px;
+	width: 100%;
+}
+
+.inner-preview {
+	background: gainsboro;
+	padding: 10px;
+	display: flex;
+	margin: 4% 0;
+	height: 85%;
+}
+
+.inner-preview > p {
+	width: 40%;
+	background: white;
+}
+
+#title {
+	font-size: 4.5em;
+}

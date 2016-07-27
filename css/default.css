@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', Verdana;
+}
+
+html, body {
+    height: 100%;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    background: black;
+    height: 2.1em;
+}
+
+header {
+    height: 350px;
+    background: black;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    top: 10em;
+}
+
+blockquote {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 3.5em;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+}
+
+nav > ul > li > a {
+    color: white;
+    font-size: 1.4em;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+
+.list-inline > li > a:hover {
+    border-bottom: 3px solid orange;
+    color: white;
+}
+
+.footer-inline > li > a:hover {
+    color: white;
+    text-align: center
+}
+
+.nav-links {
+    display: inline;
+    list-style-type: none;
+}
+
+.footer-links {
+    text-align: center;
+    height: 80px;
+    margin: 50px;
+}
+
+.footer-social {
+    text-align: center;
+}
+
+.footer-social > .footer-inline > li > a {
+    color: white;
+}
+
+.list-inline {
+    display: inline;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.copyright {
+    padding: 15px;
+}
+
+.fa {
+    color: white;
+}
+
+.fa-circle {
+    color: black;
+}
+
+.fa-lg:hover > .fa-circle {
+    border-bottom: 3px solid orange; 
+}
+
+.active-tab {
+    border-bottom: 3px solid white;
+}
+
+#title {
+    color: white;
+    font-size: 5em;
+    text-align: center;
+    position: relative;
+    top: 25%;
+    clear: both;
+}
+
+#subtitle {
+    font-size: .5em;
+}
+
+#title_line {
+    border: 3px solid;
+    width: 53%;
+    margin: 1% auto;
+}

@@ -1,97 +1,134 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>DBC Blog Post</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-  </head>
+<html lang="en">
 
-  <body>
-    <header>
-      <h1>My Blog Post</h1>
-      
-      <nav class="nav-bar">
-        <ul class="navigation">
-          <li><a href="http://konichiwa1200.github.io/">Home</a></li>
-          <li><a href="http://konichiwa1200.github.io/projects/index.html">Projects</a></li>
-          <li><a href="http://konichiwa1200.github.io/blog-index.html">Blog</a></li>
-          <li><a href="http://konichiwa1200.github.io/about.html">About</a></li>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Konichiwa - Blog</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    
+    <link href="../css/default.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <nav>
+        <ul class="list-inline">
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="../projects/projects-index.html">Projects</a>
+            </li>
+            <li>
+                <a href="blog-index.html" class="active-tab">Blogs</a>
+            </li>
+            <li>
+                <a href="../about.html">About</a>
+            </li>
         </ul>
-      </nav>
+    </nav>
+
+    <header>
+        <div id="title">
+            My Introduction to NoSQL
+        </div>
     </header>
-
+    
     <main>
-        <nav class="breadcrumbs">
-        <a href="http://konichiwa1200.github.io/index.html">Home</a> >
-        <a href="http://konichiwa1200.github.io/blog-index.html">Blogs</a> > Eighth Post on NoSQL 
-        </nav>
+        <h1>Posted on February 20, 2016</h1>
+        <hr class="date-posted">
 
-        <h2>Eighth Post on NoSQL </h2><span class="date-post-created">2/20/2016</span>
-        <section>
-            <h3>NoSQL</h3>
-            <p>
-                Originally referenced as "no SQL", it is now described as "Not Only SQL." That is because while the data model by NoSQL is of a distributed data across clusters of nodes, it still accepts the structured query language (SQL) commands. Now to understand its rise, we will first look at its history. 
-            </p>
-            
-            <h3>History</h3>
-            <p>
-                SQL's rose to be the preferred method of data modeling in the 80's and 90's due to the need of creating an efficient way of storing data, since data storage was an adjustable cost while computing power was viewed as a fixed cost. Relational databases were used due to its storage model of limiting duplicate copies of the data by storing duplicates in table of their own, and then making a connection to the original table (a relationship). That remained true during the intranet era, but during the dot com boom and technological advances in storage handling, technological entities realized that the relational database did not scale out effectively, but rather scaled up. Scaling up ment purchasing expensive new hardware and migrating the data, thus resulting in downtime and changing the economic burden from storage prohibitive to computational power prohibitive. As a result, the NoSQL movement began to address this problem. 
-            </p>
-            
-            <h3>SQL</h3>
-            <p>
-                Like stated above, SQL uses a schema, or structure, to place all of the data. Its focus is to reduce storage space and complains when redundant data is placed in the schema. Because of this, SQL databases were originally designed for use in a single computer, thus when the model is placed on a dristributed system, SQL does not function optimably and many of the benefits are lost.
-            </p>
-            
-            <h3>NoSQL</h3>
-            <p>
-                On the other hand, NoSQL technology is built from the ground up to be distributed, and thus breaks the schema rules. The notion is that there is no schema, but rather an implied schema, where data redundancy is accepted and the work of obtaining a results from queries is produced from aggregating objects over nodes is key to its current success. The central idea behind distributed databases is that they treat data as objects and aggregate the results, with the most requested objects filtering to the top, thus when additional nodes come online to address any lag in the system, the aggregates can be distributed throughout. 
-            </p>
-            <h3>The Solutions</h3>
-            <p>
-                Like stated above, NoSQL was the answer to the question of how to handle big data and scale out effectively. But their are different problems, and no one answer that fits all solution. Take a look at the CAP diagram below to see why.
-            </p>
-            <img src="../imgs/iron_triangle.png" alt="Iron Triangle of Data">
+        <h1>NoSQL</h1>
+        <p>
+            Originally referenced as "no SQL", it is now described as "Not Only SQL." That is because while the data model by NoSQL is of a distributed data across clusters of nodes, it still accepts the structured query language (SQL) commands. Now to understand its rise, we will first look at its history. 
+        </p>
+        
+        <h1>History</h1>
+        <p>
+            SQL's rose to be the preferred method of data modeling in the 80's and 90's due to the need of creating an efficient way of storing data, since data storage was an adjustable cost while computing power was viewed as a fixed cost. Relational databases were used due to its storage model of limiting duplicate copies of the data by storing duplicates in table of their own, and then making a connection to the original table (a relationship). That remained true during the intranet era, but during the dot com boom and technological advances in storage handling, technological entities realized that the relational database did not scale out effectively, but rather scaled up. Scaling up ment purchasing expensive new hardware and migrating the data, thus resulting in downtime and changing the economic burden from storage prohibitive to computational power prohibitive. As a result, the NoSQL movement began to address this problem. 
+        </p>
+        
+        <h1>SQL</h1>
+        <p>
+            Like stated above, SQL uses a schema, or structure, to place all of the data. Its focus is to reduce storage space and complains when redundant data is placed in the schema. Because of this, SQL databases were originally designed for use in a single computer, thus when the model is placed on a dristributed system, SQL does not function optimably and many of the benefits are lost.
+        </p>
+        
+        <h1>NoSQL</h1>
+        <p>
+            On the other hand, NoSQL technology is built from the ground up to be distributed, and thus breaks the schema rules. The notion is that there is no schema, but rather an implied schema, where data redundancy is accepted and the work of obtaining a results from queries is produced from aggregating objects over nodes is key to its current success. The central idea behind distributed databases is that they treat data as objects and aggregate the results, with the most requested objects filtering to the top, thus when additional nodes come online to address any lag in the system, the aggregates can be distributed throughout. 
+        </p>
 
-            <h3>NoSQL Objets</h3>
-            <p>
-                But what do they look like? And how do they differ from the SQL? Let's look at the figure below.
-            </p>
-            <img src="../imgs/SQL.png" alt="SQL Example" class="img_example">
-            <img src="../imgs/NoSQL.png" alt="NoSQL Example" class="img_example">
-            
-            <p>
-                As we can see, SQL (left) will have challenges when the database is moved outside of a single unit, because the schema must be maintained in order for the model to function, but the NoSQL does not. The NoSQL's implicit schema is evident from the property names, thus a schema exists but not rigourously inforced.
-            </p>
-            
-            <h3>Benefits of NoSQL</h3>
-            <p>
-                Aside from being able to distribute the database through multiple nodes (computers), we are also able to add additional properties at any point without breaking the database. In the example above, its a Document-based NoSQL database that stores the data in JSON objects; this allows us to simply add properties, but with SQL, you would have to update the entire table, and fill in the values that have no data.
-            </p>
-            <p>
-                Additionally, relational databases need a little more hands on when the data is special, like video and sound files, while NoSQL does not care what type of data is placed inside the object, it just handles objects.
-            </p>
-        </section>  
-        <hr>
+        <h1>The Solutions</h1>
+        <p>
+            Like stated above, NoSQL was the answer to the question of how to handle big data and scale out effectively. But their are different problems, and no one answer that fits all solution. Take a look at the CAP diagram below to see why.
+        </p>
+        <img src="../imgs/iron_triangle.png" alt="Iron Triangle of Data" class="img-lg">
 
-        <h3>Resources</h3><br>
-        <section>
-            <a href="http://www.couchbase.com/sites/default/files/uploads/all/whitepapers/NoSQL-Whitepaper.pdf" target="_blank">Why NoSQL - Couchbase</a><br>		
-            <a href="https://www.youtube.com/watch?v=ASiU89Gl0F0" target="_blank">NoSQL Distilled to an hour - Martin Fowler - NoSQL matters Conference</a><br>
-            <a href="https://www.youtube.com/watch?v=qI_g07C_Q5I" target="_blank">Introduction to NoSQL - Martin Fowler - GOTO Conference</a></br>
-            <a href="https://www.youtube.com/watch?v=FNFRTnp9Qh4" target="_blank">Building Apps for Mobile, Gaming, IoT, and more using AWS DynamoDB - Rick Houlihan - Harvard University</a><br>
-            <a href="https://www.youtube.com/watch?v=CvIr-2lMLsk">What is MongoDB? - MongoDB</a><br>
-        </section>
-    </main>    
-
+        <h1>NoSQL Objets</h1>
+        <p>
+            But what do they look like? And how do they differ from the SQL? Let's look at the figure below.
+        </p>
+        <img src="../imgs/SQL.png" alt="SQL Example" class="img-md">
+        <img src="../imgs/NoSQL.png" alt="NoSQL Example" class="img-md">
+        
+        <p>
+            As we can see, SQL (left) will have challenges when the database is moved outside of a single unit, because the schema must be maintained in order for the model to function, but the NoSQL does not. The NoSQL's implicit schema is evident from the property names, thus a schema exists but not rigourously inforced.
+        </p>
+        
+        <h1>Benefits of NoSQL</h1>
+        <p>
+            Aside from being able to distribute the database through multiple nodes (computers), we are also able to add additional properties at any point without breaking the database. In the example above, its a Document-based NoSQL database that stores the data in JSON objects; this allows us to simply add properties, but with SQL, you would have to update the entire table, and fill in the values that have no data.
+        </p>
+        <p>
+            Additionally, relational databases need a little more hands on when the data is special, like video and sound files, while NoSQL does not care what type of data is placed inside the object, it just handles objects.
+        </p>
+    </main>
+                
     <footer>
-      <ul class="footer-navigation">
-            <li><a href="http://www.github.com/"><img class="thumbnails" src="../imgs/github.png"></a></li>
-            <li><a href="http://www.linkedin.com/in/"><img class="thumbnails" src="../imgs/linkedin.png"></a></li>
-            <li><a href="http://twitter.com/"><img class="thumbnails" src="../imgs/twitter.png"></a></li>
-            <li><a href="mailto:"><img class="thumbnails" src="../imgs/email.png"></a></li>
-      </ul>
+        <div class="footer-social">
+            <ul class="footer-inline">
+                <li>
+                    <a href="https://twitter.com/konichiwa12001">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto: konichiwa1200@gmail.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/konichiwa1200">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Konichiwa Inc. 2016</p>
+        </div>
     </footer>
-  </body>
+
+    </body>
 </html>

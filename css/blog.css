@@ -1,0 +1,91 @@
+main {
+	margin: .5% 25%;
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+p {
+	padding: 5% 0;
+	font-size: 1.2em;
+}
+
+article {
+	border: 5px solid white;
+}
+
+pre {
+	padding: 15px;
+	word-wrap: break-word;
+	background: gainsboro;
+	font-family: 'Consolas','Monaco','Lucida Console','Liberation Mono','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier New';
+}
+
+code {
+	background: gainsboro;
+	font-family: 'Consolas','Monaco','Lucida Console','Liberation Mono','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier New';
+}
+
+header {
+	height: 200px;
+}
+
+a:hover {
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.post-title {
+	font-size: 1.5em;
+	background: gainsboro;
+	text-align: center;
+	padding: 5% 3%;
+}
+
+.post-date {
+	font-size: 1.1em;
+	background: orange;
+	text-align: center;
+	padding: 2%;
+}
+
+.resources {
+    display: flex;
+}
+
+.resources > a {
+	background-color: gainsboro;
+    margin: 5% 5px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.resources > a:hover {
+	background: orange;
+}
+
+.img-md {
+	width: 45%;
+	margin: 0 10px;
+}
+
+.img-lg {
+	width: 95%;
+	margin: 10px;
+}
+
+.date-posted {
+    width: 50%;
+    margin: 3% 0;
+    border: 2px solid orange;
+}
+
+#title {
+	font-size: 4.5em;
+}
